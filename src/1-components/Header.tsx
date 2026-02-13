@@ -13,6 +13,7 @@ import {
 	X,
 } from "lucide-react";
 import { useState } from "react";
+import { ThemeToggle } from "@/1-components/ThemeToggle";
 import ConvexHeader from "@/2-integrations/convex/header-user";
 
 export default function Header() {
@@ -25,7 +26,7 @@ export default function Header() {
 		<>
 			<header
 				data-testid="header"
-				className="p-4 flex items-center justify-between bg-gray-800 text-white shadow-lg w-full"
+				className="p-4 flex items-center justify-between bg-blue-200 text-gray-800 dark:bg-gray-800 dark:text-white shadow-lg w-full"
 			>
 				<button
 					type="button"
@@ -44,7 +45,10 @@ export default function Header() {
 						/>
 					</Link>
 				</h1>
-				<ConvexHeader />
+				<div className="flex items-center gap-2">
+					<ThemeToggle />
+					<ConvexHeader />
+				</div>
 			</header>
 
 			<aside
